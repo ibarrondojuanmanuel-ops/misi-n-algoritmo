@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Misión algoritmo — Objetivo: recuperar el código perdido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>🤖 Misión algoritmo</h1>
+        <p>Objetivo: recuperar el código perdido · Prototipo educativo interactivo</p>
+    </header>
+    <main>
+        <div class="levels" id="levels" aria-label="Selección de desafíos"></div>
+        <div class="layout">
+            <section class="panel">
+                <h2 id="levelTitle"></h2>
+                <p id="intro"></p>
+                <p class="muted" id="objective"></p>
+                <div class="board" id="board" role="img"
+                    aria-label="Tablero de cinco por cinco con robot, obstáculos y meta"></div>
+                <div class="legend"><span>🤖 Robot</span><span>🏁 Meta</span><span>⬛ Obstáculo</span></div>
+                <p class="note">El robot comienza mirando hacia arriba (↑). Girar cambia su orientación; avanzar mueve
+                    una casilla.</p>
+            </section>
+            <section class="panel">
+                <h2>Construí tu algoritmo</h2>
+                <p class="muted">Elegí instrucciones en orden. Después, presioná «Ejecutar» para comprobar el recorrido.
+                </p>
+                <div class="tools"><button id="forward">↑ Avanzar</button><button id="left">↶ Girar
+                        izquierda</button><button id="right">↷ Girar derecha</button></div>
+                <div class="queue" id="queue" aria-live="polite"></div>
+                <p class="muted">Para corregir una instrucción, hacé clic sobre ella: cambia entre Avanzar, Girar
+                    izquierda y Girar derecha. También podés deshacer la última.</p>
+                <div class="tools secondary"><button id="undo">Deshacer</button><button id="clear">Borrar
+                        todo</button><button id="reset">Reiniciar tablero</button></div>
+                <div class="tools" style="margin-top:10px"><button id="run">▶ Ejecutar</button><button id="hint"
+                        style="background:#75531c">💡 Pedir pista</button></div>
+                <div class="trace" id="trace" aria-live="polite">Registro de ejecución: todavía no se ejecutó el
+                    algoritmo.</div>
+                <div class="reflection"><label for="reflection">Bitácora del detective: registrá tu investigación y
+                        explicá cómo corregiste el algoritmo</label>
+                    <p class="muted">1. ¿Qué esperabas que hiciera el robot?<br>2. ¿Qué ocurrió al ejecutar el
+                        algoritmo?<br>3. ¿Qué instrucciones modificaste y por qué?<br>4. ¿Qué aprendiste al corregir los
+                        errores?</p><textarea id="reflection"
+                        aria-label="Respuestas a las cuatro preguntas de la bitácora"
+                        placeholder="Esperaba que... Al ejecutar observé... Cambié las instrucciones... Aprendí que..."></textarea><button
+                        id="checkReflection" type="button" style="margin-top:8px;background:#476a54">Guardar reflexión
+                        en esta sesión</button>
+                    <p id="reflectionFeedback" class="muted"></p>
+                </div>
+                <div class="status" id="status" role="status" aria-live="polite">Prepará una secuencia y probala.
+                    ¡Equivocarse también ayuda a aprender!</div>
+                <p class="score" id="score"></p>
+                <p class="muted" id="progress"></p>
+            </section>
+        </div>
+        <p class="note">Material Trabajo Final Integrador. Esta versión implementa secuencias, giros,
+            desplazamiento, obstáculos, pistas progresivas y tres desafíos. No registra datos personales ni requiere
+            conexión a Internet.</p>
+    </main>
+    <footer>Misión algoritmo · Juan Manuel Ibarrondo</footer>
+    <script src="java.js"></script>
+</body>
+
+</html>
